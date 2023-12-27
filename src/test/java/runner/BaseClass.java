@@ -1,6 +1,8 @@
 package runner;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -13,7 +15,7 @@ public class BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		System.out.println("Session Started");
+		System.out.println("**********************************************Session Started**************************************");
 	}
 	
 	public void launchApp(String URL) {
@@ -38,8 +40,19 @@ public class BaseClass {
 	public void CloseWebDriver()
 	{
 		driver.quit();
-		System.out.println("Session Closed");
+		System.out.println("********************************************Session Closed*************************************************");
 	}
 	
+	
+	public WebElement getElementBy(By element) {
+		return driver.findElement(element);
+		
+	}
+	
+	public void checkElementIsdisplayed(By element) {
+		if (driver.findElement(element).isDisplayed()) {
+			logMessage("**[INFO] Element is Displayed");
+		}
+	}
 
 }
