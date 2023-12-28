@@ -1,6 +1,12 @@
 package StepDefination;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import PageActions.Saucedemo_Actions;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +18,28 @@ public class Saucedemo_StepDef  extends BaseClass {
 	}
 	
 	Saucedemo_Actions sauceActions = new Saucedemo_Actions() ;
+	
+	@Before
+	public void BeforeScenario(Scenario scenario)
+	{
+		System.out.println("-----------------------------------------------------[Starting Scenario]-----------------------------------") ;
+		System.out.println(" Scenario:" + scenario.getName()) ;
+		System.out.println("-----------------------------------------------------------------------------------------------------------") ;
+	}
+	
+	@After
+	public void AfterScenario(Scenario scenario)
+	{
+		System.out.println("-----------------------------------------------------[Scenario Result]-----------------------------------") ;
+		System.out.println(" Scenario:" + scenario.getName() + "Result: " + scenario.getStatus() );
+		System.out.println("---------------------------------------------------------------------------------------------------------") ;
+		
+		if(scenario.isFailed()) {
+			TakesScreenshot takesScreenshot = (TakesScreenshot) driver ;
+			scenario.attach(takesScreenshot.getScreenshotAs(OutputType.BYTES), 
+					"image/png", "Scenario Failed Taking Screenshot");
+		}
+	}
 	
 	@Given("I launch website url")
 	public void i_launch_website_url() {

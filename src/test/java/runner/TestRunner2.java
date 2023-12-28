@@ -8,11 +8,11 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		features= "src/test/resources/Features",
 		glue = "StepDefination",
-		tags = "@Smoke",
+		tags = "@Test",
 		plugin= {"pretty", "json:target/cucumber-reports/Cucumber.json", "pretty", "html:target/cucumber-reports/report.html"},
 		monochrome = true
 		)
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner2 extends AbstractTestNGCucumberTests {
 	
 	BaseClass baseObj = new BaseClass() ;
 	

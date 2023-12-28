@@ -7,8 +7,8 @@
         <methods>
           <include name="setUpClass"/>
           <include name="CloseWebDriver"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 2"/>
           <include name="InitializeWebDriver"/>
         </methods>
       </class> <!-- runner.TestRunner -->
