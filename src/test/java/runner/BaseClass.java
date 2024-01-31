@@ -55,10 +55,36 @@ public class BaseClass {
 		
 	}
 	
+	public WebElement getElementBy(By element, String text) {
+		String locator = element.toString().replaceAll("#option", text);
+		element = By.xpath(locator.split(":")[1].trim());
+		return driver.findElement(element);
+		
+	}
+	
 	public void checkElementIsdisplayed(By element) {
 		if (driver.findElement(element).isDisplayed()) {
 			logMessage("**[INFO] Element is Displayed");
 		}
 	}
+	
+	public void checkElementIsdisplayed(By element, String text ) {
+		if (getElementBy(element, text).isDisplayed()) {
+			logMessage("**[INFO] Element is Displayed");
+		}
+	}
+	
+	public void hardWait(int sec) {
+		try {
+			Thread.sleep(sec*100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+//	public void implicitWait() {
+//		driver.manage().timeouts().implicitlyWait(10);
+//	}
 
 }

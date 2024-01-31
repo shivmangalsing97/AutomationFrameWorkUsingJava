@@ -77,7 +77,7 @@
                         <configuration>
                             <projectName>AutomationFrameWorkUsingJava</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber-reports/Cucumber.json</cucumberOutput>
+                            <cucumberOutput>${project.build.directory}/cucumber-reports/cucumber.json</cucumberOutput>
                         </configuration>
                     </execution>
                 </executions>
