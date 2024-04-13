@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test thread-count="5" name="Test(failed)" parallel="classes">
     <classes>
-      <class name="runner.TestRunner">
+      <class name="selenium.practice.MouseOver">
         <methods>
-          <include name="setUpClass"/>
-          <include name="CloseWebDriver"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0 2"/>
-          <include name="InitializeWebDriver"/>
+          <include name="mouseOver"/>
         </methods>
-      </class> <!-- runner.TestRunner -->
+      </class> <!-- selenium.practice.MouseOver -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+  <test thread-count="4" name="Custom Class test">
+	  <classes>
+		  <class name="selenium.practice.DragAndDrop" />
+		  <class name="selenium.practice.MouseOver" />
+		  <class name="selenium.practice.ScrernShot" />
+		  <class name="selenium.practice.SwitchToWindow" />
+	  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
